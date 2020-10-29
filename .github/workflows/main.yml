@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: 3.5
       - name: Lint with pylint
-        run: :
+        run: |
           make lint
 
       - name: Test with pytest
