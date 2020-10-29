@@ -13,10 +13,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run Make
-        run: make hello
+      - name: Setup Python 3.5
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.5
+      - name: Lint with pylint
+        run: :
+          make lint
 
-      - name: Run a multi-line script
+      - name: Test with pytest
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          make test
+
